@@ -8,19 +8,20 @@ const Login = () => {
   return (
     <>
       <Row className="h-100">
-        <Col span={8} className="login-image"></Col>
-        <Col span={2}></Col>
+        <Col span={8} className="login-image-gradiant">
+          <div className="login-image"></div>
+        </Col>
+        <Col span={2} />
         <Col span={12}>
           <Row align="middle" className="h-100">
             <Col className="w-100">
+              <div className="login-logo mb-2" />
               <Title level={5} type="secondary">
-                {global.tr.welcome}،
-              </Title>
-              <Title level={5} type="secondary">
+                {global.tr.welcome}،<br />
                 {global.tr.please_signin}
               </Title>
               <Title level={5} type="secondary">
-                {global.tr.no_account} <Link to="/">{global.tr.signup_now}</Link>
+                {global.tr.no_account} <Link to="/register">{global.tr.signup_now}</Link>
               </Title>
               <Divider />
               <Form layout="vertical">
@@ -46,14 +47,14 @@ const Login = () => {
                 <Button type="primary" htmlType="submit" className="left">
                   {global.tr.login}
                 </Button>
-                <Button type="link" className="left ml-2">
+                <Link to="/recover-password" className="left ml-2" style={{ marginTop: "5px" }}>
                   {global.tr.recover_password}
-                </Button>
+                </Link>
               </Form>
             </Col>
           </Row>
         </Col>
-        <Col span={2}></Col>
+        <Col span={2} />
       </Row>
     </>
   );
