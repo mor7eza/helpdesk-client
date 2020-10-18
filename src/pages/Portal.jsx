@@ -9,27 +9,33 @@ const { Search } = Input;
 const Portal = () => {
   return (
     <div className="w-100 h-100 bg-gray-3">
-      <Row style={{ padding: "10px 40px" }} className="bg-white">
-        <img src={process.env.PUBLIC_URL + "/assets/images/logo.png"} alt="logo" className="portal-logo mt-auto" />
-        <div className="left mr-auto">
-          <p style={{ marginBottom: "0.3rem" }}>{global.tr.welcome}</p>
-          <Space>
-            <Link to="/login" className="ant-btn ant-btn-primary ant-btn-rtl">
-              {global.tr.signin}
-            </Link>
-            <Link to="/register" className="ant-btn ant-btn-rtl">
-              {global.tr.signup}
-            </Link>
-          </Space>
+      <div className="container-fluid bg-white">
+        <div className="container">
+          <Row style={{ padding: "10px 0px" }}>
+            <img src={process.env.PUBLIC_URL + "/assets/images/logo.png"} alt="logo" className="portal-logo mt-auto" />
+            <div className="left mr-auto">
+              <p style={{ marginBottom: "0.3rem" }}>{global.tr.welcome}</p>
+              <Space>
+                <Link to="/login" className="ant-btn ant-btn-primary ant-btn-rtl">
+                  {global.tr.signin}
+                </Link>
+                <Link to="/register" className="ant-btn ant-btn-rtl">
+                  {global.tr.signup}
+                </Link>
+              </Space>
+            </div>
+          </Row>
+
+          <Menu mode="horizontal">
+            <Menu.Item icon={<HomeOutlined />} style={{ marginRight: "0" }}>
+              {global.tr.homepage}
+            </Menu.Item>
+            <Menu.Item icon={<BookOutlined />}>{global.tr.knowledge_base}</Menu.Item>
+          </Menu>
         </div>
-      </Row>
-      <Menu mode="horizontal">
-        <Menu.Item icon={<HomeOutlined />} style={{ marginRight: "40px" }}>
-          {global.tr.homepage}
-        </Menu.Item>
-        <Menu.Item icon={<BookOutlined />}>{global.tr.knowledge_base}</Menu.Item>
-      </Menu>
-      <div style={{ padding: "20px 40px" }}>
+      </div>
+
+      <div style={{ padding: "20px 0" }} className="container">
         <Title level={4}>{global.tr.how_help}</Title>
         <Row className="mt-1">
           <Col span={10}>
@@ -49,8 +55,10 @@ const Portal = () => {
             {global.tr.check_ticket_status}
           </Button>
         </Row>
-        <Divider />
-        <Row className="segment" style={{ padding: "20px" }}>
+      </div>
+      <Divider style={{ marginTop: "0" }} />
+      <div className="container">
+        <Row className="segment">
           <Col>
             <Title level={5}>{global.tr.knowledge_base}</Title>
             <Title level={5} type="secondary">
