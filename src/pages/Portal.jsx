@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button, Input, Menu, Row, Col, Space, Typography, Divider } from "antd";
 import { HomeOutlined, BookOutlined, PlusSquareFilled, CheckSquareFilled } from "@ant-design/icons";
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 const { Search } = Input;
 
 const Portal = () => {
@@ -50,6 +50,15 @@ const Portal = () => {
           </Button>
         </Row>
         <Divider />
+        <Row className="segment" style={{ padding: "20px" }}>
+          <Col>
+            <Title level={5}>{global.tr.knowledge_base}</Title>
+            <Title level={5} type="secondary">
+              عمومی
+            </Title>
+            <Text type="strong">عنوان</Text>
+          </Col>
+        </Row>
       </div>
     </div>
   );
